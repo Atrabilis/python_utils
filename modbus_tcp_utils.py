@@ -1,7 +1,7 @@
 from pyModbusTCP.client import ModbusClient
 import csv
 
-def funcion (ip, pt = 502, d_id = 1, save_csv = False , beginning = 0, ending= 10):
+def registers_sweeper (ip, pt = 502, d_id = 1, save_csv = False , beginning = 0, ending= 10):
     client = ModbusClient(host = ip, port = pt, unit_id = d_id)
     available_registers = []
     for register in range(beginning, ending+1):
